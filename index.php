@@ -10,6 +10,7 @@
 
             $students = array();
 
+            // ADDING STUDENTS TO STUDENTS ARRAY
             $first = new Student();
             $first->surname = "Doe";
             $first->first_name = "John";
@@ -31,8 +32,19 @@
             $second->add_grade(50);
             $students['a456'] = $second;
 
+            $third = new Student();
+            $third->surname = "Le";
+            $third->first_name = "Kevin";
+            $third->add_email('home','kevin@le.com');
+            $third->add_email('work','kevin@mcdonalds.com');
+            $third->add_grade(80);
+            $third->add_grade(50);
+            $students['k111'] = $third;
+
+            // SORTING STUDENTS ARRAY ALPHABETICALLY
             ksort($students);
 
+            // PRINT OUT STUDENTS ARRAY
             foreach($students as $student){
                 echo $student->toString();
             }
